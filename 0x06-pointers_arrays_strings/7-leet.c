@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * leet - encodes a string with
+ * *leet - encodes a string with
  * similar numbers
- * @str: string
+ * @s: string
  *
  * Return: string
  */
