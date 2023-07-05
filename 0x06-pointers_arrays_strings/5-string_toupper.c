@@ -3,10 +3,10 @@
 #include <string.h>
 
 /**
- * *string_upper - the change string to uppercase
- * 
+ * string_toupper - the change string to uppercase
  * @str: string to convert
- * return: str
+ *
+ * Return: str
  */
 
 char *string_toupper(char *str)
