@@ -10,7 +10,7 @@
  * Return: characters of array
  */
 
-char *creat_array(unsigned int size, char c)
+char *create_array(unsigned int size, char c)
 {
 	char *cp;
 	unsigned int i;
@@ -20,7 +20,7 @@ char *creat_array(unsigned int size, char c)
 
 	cp = malloc(sizeof(c) * size);
 
-	if(cp == NULL)
+	if (cp == NULL)
 		return (NULL);
 	for (i = 0; i < size; i++)
 		cp[i] = c;
