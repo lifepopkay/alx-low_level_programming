@@ -16,7 +16,7 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	for (; str[i] != '0'; size++)
+	for (; str[i] != '0'; i++)
 
 	mp = (char *)malloc((i + 1) * sizeof(char));
 
