@@ -11,14 +11,14 @@
 
 char *_strdup(char *str)
 {
-	int i = 0, size = 0;
+	unsigned int i = 0, j;
 	char *mp;
 
 	if (str == NULL)
 		return (NULL);
-	for (; str[size] != '0'; size++)
+	for (; str[i] != '0'; size++)
 
-	mp = malloc(size * sizeof(str));
+	mp = (char *)malloc((i + 1) * sizeof(char));
 
 	if (mp == 0)
 	{
@@ -26,9 +26,9 @@ char *_strdup(char *str)
 	}
 	else
 	{
-		for (; i < size; i++)
+		for (j = 0; j < i; j++)
 		{
-			mp[i] = str[i];
+			mp[i] = str[j];
 		}
 	}
 	return (mp);
