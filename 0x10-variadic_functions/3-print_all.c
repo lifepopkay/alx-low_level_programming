@@ -32,11 +32,11 @@ void print_str(va_list array)
 {
 	char *s = va_arg(array, char *);
 
-	s == NULL ? printf("(nil)") : printf("%s", s); 
+	s == NULL ? printf("(nil)") : printf("%s", s);
 }
 
 /**
- * print_c - prints character
+ * print_char - prints character
  * @array: argument to print
  */
 
@@ -46,16 +46,10 @@ void print_char(va_list array)
 }
 
 /**
- * struct op - Struct op
+ * print_all - prints all string by format
+ * @format: format
  *
- * @ft: The format
- * @f: The function associated
  */
-typedef struct op
-{
-    char ft;
-    void (*f)(va_list);
-} ft_p;
 
 void print_all(const char * const format, ...)
 {
@@ -75,7 +69,7 @@ void print_all(const char * const format, ...)
 	while (format && format[k])
 	{
 		m = 0;
-		while(m < 4)
+		while (m < 4)
 		{
 			if (format[k] == prt[m].ft)
 			{
