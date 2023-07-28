@@ -2,7 +2,7 @@
 
 
 /**
- * print_list - prints all the 
+ * print_list - prints all the
  * element of a list
  * @h: singly linked list used
  *
