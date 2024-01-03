@@ -5,7 +5,7 @@
  *
  * @key: the key of the value
  * @size: size the array of the hash tab *
- * Return: this uses the hash_djb2 
+ * Return: this uses the hash_djb2
  */
 
 
