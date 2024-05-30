@@ -1,52 +1,39 @@
 #include "search_algos.h"
-/*
-* print_arr - prints current array
-* 
-* @arr: input array
-* @start: first element in the array
-* @end: last element in the array
-* Returns: array
-*/
-
-void print_arr(int *arr, size_t start, size_t end) { 
-    printf("Searching in array: ");
-    for (size_t i = start; i <= end; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
 
 /**
- * binary_search - calls to binary_search to return
- * the index of the number
- *
- * @array: input array
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
- */
-int binary_search(int *array, size_t size, int value) {
-    if (array == NULL || size == 0) {
-        return (-1);
-    }
+  * binary_search - Searches for a value in a sorted array
+  *                 of integers using binary search.
+  * @array: A pointer to the first element of the array to search.
+  * @size: The number of elements in the array.
+  * @value: The value to search for.
+  *
+  * Return: If the value is not present or the array is NULL, -1.
+  *         else, the index where the value is located.
+  *
+  * Description: Prints the [sub]array being searched after each change.
+  */
+int binary_search(int *array, size_t size, int value)
+{
+	size_t i, left, right;
 
-    size_t left = 0;
-    size_t right = size - 1;
+	if (array == NULL)
+		return (-1);
 
-    while (left <= right)
-    {
-        size_t mid = (left + right) / 2;
-        print_arr(array, left, right);
+	for (left = 0, right = size - 1; right >= left;)
+	{
+		printf("Searching in array: ");
+		for (i = left; i < right; i++)
+			printf("%d, ", array[i]);
+		printf("%d\n", array[i]);
 
-        if (array[mid] == value) {
-            return mid;
-        } else if (array[mid] < value) {
-            left = mid + 1;
-        } else {
-            right = mid - 1
-        }
-    }
+		i = left + (right - left) / 2;
+		if (array[i] == value)
+			return (i);
+		if (array[i] > value)
+			right = i - 1;
+		else
+			left = i + 1;
+	}
 
-    return (-1);
-    
+	return (-1);
 }
